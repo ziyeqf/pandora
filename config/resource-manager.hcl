@@ -108,7 +108,7 @@ service "cognitiveservices" {
 }
 service "communication" {
   name      = "Communication"
-  available = ["2023-03-31", "2023-04-01", "2025-05-01"]
+  available = ["2023-03-31", "2023-04-01", "2025-05-01", "2026-03-18"]
 }
 service "compute" {
   name      = "Compute"
@@ -227,6 +227,10 @@ service "devtestlabs" {
 service "digitaltwins" {
   name      = "DigitalTwins"
   available = ["2023-01-31"]
+}
+service "discovery" {
+  name      = "Discovery"
+  available = ["2026-06-01"]
 }
 service "dns" {
   name      = "DNS"
@@ -351,7 +355,7 @@ service "liftrastronomer" {
 }
 service "liftrqumulo" {
   name      = "QumuloStorage"
-  available = ["2024-06-19"]
+  available = ["2024-06-19", "2026-04-16"]
 }
 service "loadtestservice" {
   name      = "LoadTestService"
@@ -397,7 +401,7 @@ service "migrate" {
 }
 service "mongocluster" {
   name      = "MongoCluster"
-  available = ["2024-07-01", "2025-09-01"]
+  available = ["2024-07-01", "2025-09-01", "2026-06-01"]
 }
 service "monitor" {
   name      = "Insights"
@@ -417,7 +421,7 @@ service "mysql" {
 }
 service "netapp" {
   name      = "NetApp"
-  available = ["2025-01-01", "2025-03-01", "2025-06-01", "2025-12-01", "2026-01-01"]
+  available = ["2025-01-01", "2025-03-01", "2025-06-01", "2025-12-01", "2026-01-01", "2026-05-01"]
 }
 service "network" {
   name      = "Network"
@@ -459,6 +463,10 @@ service "oracle" {
 service "orbital" {
   name      = "Orbital"
   available = ["2022-11-01"]
+}
+service "orbitalplanetarycomputer" {
+  name      = "OrbitalPlanetaryComputer"
+  available = ["2026-04-15"]
 }
 service "paloaltonetworks" {
   name      = "PaloAltoNetworks"
