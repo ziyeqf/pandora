@@ -41,17 +41,18 @@ func (workaroundWeb40128) Process(input sdkModels.APIVersion) (*sdkModels.APIVer
 		return nil, errors.New("expected a model named `AzureStorageInfoValue` but didn't get one")
 	}
 
-	if _, ok := model.Fields["Endpoint"]; ok {
-		return nil, errors.New("found a field named `Endpoint` but expected none, this workaround can be removed")
-	}
-
-	model.Fields["Endpoint"] = sdkModels.SDKField{
+	expectedEndpoint := sdkModels.SDKField{
 		JsonName: "endpoint",
 		ObjectDefinition: sdkModels.SDKObjectDefinition{
 			Type: sdkModels.StringSDKObjectDefinitionType,
 		},
 		Optional: true,
 	}
+	if endpoint, ok := model.Fields["Endpoint"]; ok && endpoint == expectedEndpoint {
+		return &input, nil
+	}
+
+	model.Fields["Endpoint"] = expectedEndpoint
 	resource.Models["AzureStorageInfoValue"] = model
 	input.Resources["WebApps"] = resource
 
